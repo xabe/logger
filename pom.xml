@@ -83,6 +83,15 @@
                         <exclude>**/it/**/*.java</exclude>
                         <exclude>**/integrationTest/**/*.java</exclude>
                     </excludes>
+                    <systemPropertyVariables>
+                        <org.slf4j.simpleLogger.defaultLogLevel>DEBUG</org.slf4j.simpleLogger.defaultLogLevel>
+                        <org.slf4j.simpleLogger.showDateTime>true</org.slf4j.simpleLogger.showDateTime>
+                        <org.slf4j.simpleLogger.dateTimeFormat>yyyy-MM-dd HH:mm:ss:SSS Z</org.slf4j.simpleLogger.dateTimeFormat>
+                        <org.slf4j.simpleLogger.showThreadName>true</org.slf4j.simpleLogger.showThreadName>
+                    </systemPropertyVariables>
+                    <classpathDependencyExcludes>
+                        <classpathDependencyExcludes>org.apache.logging.log4j:log4j-slf4j-impl</classpathDependencyExcludes>
+                    </classpathDependencyExcludes>
                 </configuration>
             </plugin>
             <plugin>
@@ -101,6 +110,15 @@
                         <include>**/it/**/*.java</include>
                         <include>**/integrationTest/**/*.java</include>
                     </includes>
+                    <systemPropertyVariables>
+                        <org.slf4j.simpleLogger.defaultLogLevel>DEBUG</org.slf4j.simpleLogger.defaultLogLevel>
+                        <org.slf4j.simpleLogger.showDateTime>true</org.slf4j.simpleLogger.showDateTime>
+                        <org.slf4j.simpleLogger.dateTimeFormat>yyyy-MM-dd HH:mm:ss:SSS Z</org.slf4j.simpleLogger.dateTimeFormat>
+                        <org.slf4j.simpleLogger.showThreadName>true</org.slf4j.simpleLogger.showThreadName>
+                    </systemPropertyVariables>
+                    <classpathDependencyExcludes>
+                        <classpathDependencyExcludes>org.apache.logging.log4j:log4j-slf4j-impl</classpathDependencyExcludes>
+                    </classpathDependencyExcludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -119,15 +137,6 @@
                     <release>${java.version}</release>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <!-- update compiler plugin dependency on
-                                ASM for Java 11 compatibility -->
-                        <groupId>org.ow2.asm</groupId>
-                        <artifactId>asm</artifactId>
-                        <version>6.2</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
